@@ -1,0 +1,32 @@
+<div class="row py-4">
+    <div class="col">
+        <h1>Crear noticias</h1>
+    </div>
+    <div class="col text-end">
+        <button class="btn btn-primary btn-sm" (click)="showListPost()">Cancelar</button>
+    </div>
+</div>
+
+<div class="card p-3">
+    <form>
+        <div class="mb-3">
+            <label for="title" class="form-label">Titulo</label>
+            <input type="text" class="form-control" id="title" name="title" required [(ngModel)]="post.title">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="description" name="description" required [(ngModel)]="post.description">
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Fecha y Hora</label>
+            <input type="datetime-local" class="form-control" id="date" name="date" required [(ngModel)]="post.date">
+        </div>
+
+        <div class="mb-3">
+            <label for="photo" class="form-label">Foto</label>
+            <input type="text" class="form-control" id="photo" name="photo" required [(ngModel)]="post.photo">
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="savePost()">Guardar</button>
+    </form>
+</div>

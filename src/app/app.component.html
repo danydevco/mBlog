@@ -1,0 +1,29 @@
+<app-navbar/>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+
+            <ng-container *ngIf="showListPost" >
+                <app-list-post [posts]="posts" (createPost)="showCreatePostComponent($event)"/>
+            </ng-container>
+
+            <ng-container *ngIf="showCreatePost">
+                <app-create-post (showPosts)="showListPostComponent($event)" (eventPost)="createPost($event)"/>
+            </ng-container>
+
+            <ng-container *ngIf="showUpdatePost">
+                <app-update-post/>
+            </ng-container>
+
+            <ng-container *ngIf="showPost">
+                <app-show-post/>
+            </ng-container>
+
+        </div>
+
+        <div class="col-4">
+            <app-sidebar/>
+        </div>
+
+    </div>
+</div>
