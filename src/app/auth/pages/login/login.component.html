@@ -1,1 +1,16 @@
-<p>login works!</p>
+<div>
+    <h1>Login</h1>
+    <div>
+        <form [formGroup]="formGroup" (ngSubmit)="send()">
+            <div>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" formControlName="email" >
+            </div>
+            <div>
+                <label for="password">Usuario</label>
+                <input type="password" id="password" name="password"  formControlName="password" >
+            </div>
+            <button type="submit" [disabled]="formGroup.invalid">Acceder</button>
+        </form>
+    </div>
+</div>
