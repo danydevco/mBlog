@@ -19,7 +19,7 @@ export class CreatePostComponent {
         id: 0,
         title: '',
         description: '',
-        date: '',
+        published_at: '',
         photo: ''
     }
 

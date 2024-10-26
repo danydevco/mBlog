@@ -8,11 +8,13 @@ import {CreatePostComponent} from "./admin/components/create-post/create-post.co
 import {UpdatePostComponent} from "./admin/components/update-post/update-post.component";
 import {ShowPostComponent} from "./admin/components/show-post/show-post.component";
 import {IPost} from "./admin/interfaces/post";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
     selector: 'app-root',
     standalone: true,
     imports: [CommonModule, RouterOutlet, NavbarComponent, SidebarComponent, ListPostComponent, CreatePostComponent, UpdatePostComponent, ShowPostComponent],
+    providers: [HttpClient],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
