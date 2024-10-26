@@ -9,11 +9,12 @@ import {UpdatePostComponent} from "./admin/components/update-post/update-post.co
 import {ShowPostComponent} from "./admin/components/show-post/show-post.component";
 import {IPost} from "./admin/interfaces/post";
 import {HttpClient} from "@angular/common/http";
+import {MessageFlashComponent} from "./shared/components/message-flash/message-flash.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [CommonModule, RouterOutlet, NavbarComponent, SidebarComponent, ListPostComponent, CreatePostComponent, UpdatePostComponent, ShowPostComponent],
+    imports: [CommonModule, RouterOutlet, NavbarComponent, SidebarComponent, ListPostComponent, CreatePostComponent, UpdatePostComponent, ShowPostComponent, MessageFlashComponent],
     providers: [HttpClient],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'

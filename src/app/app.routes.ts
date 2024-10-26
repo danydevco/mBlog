@@ -8,6 +8,8 @@ import {ShowPostComponent} from "./admin/components/show-post/show-post.componen
 import {UpdatePostComponent} from "./admin/components/update-post/update-post.component";
 import {ListPostComponent} from "./admin/components/list-post/list-post.component";
 import {PostListComponent} from "./admin/pages/admin/post-list/post-list.component";
+import {PostCreateComponent} from "./admin/pages/admin/post-create/post-create.component";
+import {PostShowComponent} from "./admin/pages/admin/post-show/post-show.component";
 
 export const routes: Routes = [
     {
@@ -37,15 +39,15 @@ export const routes: Routes = [
                     },
                     {
                         path: 'create',
-                        component: CreatePostComponent
+                        component: PostCreateComponent
                     },
                     {
                         path: 'edit',
                         component: UpdatePostComponent
                     },
                     {
-                        path: 'show',
-                        component: ShowPostComponent
+                        path: 'show/:id',
+                        component: PostShowComponent
                     },
 
                 ]

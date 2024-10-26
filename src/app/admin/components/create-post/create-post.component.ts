@@ -18,7 +18,7 @@ export class CreatePostComponent {
     post: IPost = {
         id: 0,
         title: '',
-        description: '',
+        content: '',
         published_at: '',
         photo: ''
     }

@@ -1,7 +1,7 @@
 export interface IPost {
-    id: number;
+    id?: number;
     title: string;
-    description: string;
+    content: string;
     published_at: string;
     photo: string;
 }
