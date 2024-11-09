@@ -4,6 +4,7 @@ import {IPost} from "../../../interfaces/post";
 import {NgForOf} from "@angular/common";
 import {MessageFlashService} from "../../../../shared/components/message-flash/message-flash.service";
 import {RouterLink} from "@angular/router";
+import {HttpService} from "../../../services/http.service";
 
 @Component({
     selector: 'app-post-list',
@@ -21,7 +22,8 @@ export class PostListComponent {
 
     constructor(
         private postService: PostService,
-        private messageFlashService: MessageFlashService
+        private messageFlashService: MessageFlashService,
+        private httpService: HttpService
     ) {
         this.getPost()
     }
@@ -46,16 +48,10 @@ export class PostListComponent {
 
     }
 
-    getPost(){
-        this.postService.getPosts().subscribe({
-            next: (posts) => {
-                this.listPost = posts
-            },
-            error: (error) => {
-                this.messageFlashService.danger(
-                    "Error: " + error.message
-                )
+    getPost() {
+        this.httpService.get<IPost[]>('api/posts').subscribe((response) => {
+                this.listPost = response
             }
-        })
+        )
     }
 }

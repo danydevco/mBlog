@@ -13,23 +13,6 @@ export class PostService {
         private http: HttpClient
     ) { }
 
-    /*
-    async getPosts() {
-        fetch("https://iub.danydev.co/api/posts")
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                this.listPost = data
-            })
-            .catch(error => {
-                console.log(error)
-            })
-
-        return this.listPost
-    }
-    */
-
     getPosts(){
         return this.http.get<IPost[]>("https://iub.danydev.co/api/posts");
     }
