@@ -26,21 +26,24 @@ export class PostListComponent {
         this.getPost()
     }
 
-    delete(id: number) {
-        this.postService.deletePost(id).subscribe({
-            next: (response) => {
-                this.listPost = this.listPost.filter(post => post.id !== id)
-                this.messageFlashService.success(
-                    "Post deleted successfully"
-                )
-                this.getPost()
-            },
-            error: (error) => {
-                this.messageFlashService.danger(
-                    "Error: " + error.message
-                )
-            }
-        })
+    delete(id?: number) {
+        if (id != null) {
+            this.postService.deletePost(id).subscribe({
+                next: (response) => {
+                    this.listPost = this.listPost.filter(post => post.id !== id)
+                    this.messageFlashService.success(
+                        "Post deleted successfully"
+                    )
+                    this.getPost()
+                },
+                error: (error) => {
+                    this.messageFlashService.danger(
+                        "Error: " + error.message
+                    )
+                }
+            })
+        }
+
     }
 
     getPost(){

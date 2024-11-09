@@ -1,9 +1,9 @@
 <p class="login-box-msg">Sign in to start your session</p>
 <form [formGroup]="formGroup" (ngSubmit)="send()">
     <div class="input-group mb-3">
-        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+        <input type="text" class="form-control" placeholder="Nombre de usuario" formControlName="username">
         <div class="input-group-text">
-            <span class="bi bi-envelope"></span>
+            <span class="bi bi-person"></span>
         </div>
     </div>
     <div class="input-group mb-3">

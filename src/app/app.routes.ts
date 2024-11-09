@@ -10,11 +10,14 @@ import {ListPostComponent} from "./admin/components/list-post/list-post.componen
 import {PostListComponent} from "./admin/pages/admin/post-list/post-list.component";
 import {PostCreateComponent} from "./admin/pages/admin/post-create/post-create.component";
 import {PostShowComponent} from "./admin/pages/admin/post-show/post-show.component";
+import {authGuard} from "./core/guards/auth.guard";
+import {dashboardGuard} from "./core/guards/dashboard.guard";
 
 export const routes: Routes = [
     {
         path: 'auth',
         component: AuthLayoutComponent,
+        canActivate: [authGuard],
         children: [
             {
                 path: 'login',
@@ -29,6 +32,7 @@ export const routes: Routes = [
     {
         path: 'admin',
         component: AdminLayoutComponent,
+        canActivate: [dashboardGuard],
         children: [
             {
                 path: 'post',
